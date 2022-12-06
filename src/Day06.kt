@@ -4,7 +4,7 @@ fun main() {
     fun findMarker(chars: String, countUniq: Int = 4): Pair<Int, List<Char>> {
         val windows = chars.asSequence().windowed(countUniq, 1)
 
-        val foundMarker = windows.mapIndexed(){ idx, value ->
+        val foundMarker = windows.mapIndexed{ idx, value ->
             Pair(idx+1, value)
         }.filter { (_, marker) -> marker.toSet().size == countUniq }
 
